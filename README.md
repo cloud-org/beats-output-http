@@ -1,41 +1,24 @@
-beats-output-http
-=================
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-Outputter for the Elastic Beats platform that simply
-POSTs events to an HTTP endpoint.
+- [beats-output-http](#beats-output-http)
+  - [usage](#usage)
+  - [acknowledgements](#acknowledgements)
 
-[![Build Status](https://travis-ci.org/raboof/beats-output-http.svg?branch=master)](https://travis-ci.org/raboof/beats-output-http)
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-Usage
-=====
+## beats-output-http
 
-To add support for this output plugin to a beat, you
-have to import this plugin into your main beats package,
-like this:
+filebeat v7.13.0 add http output
 
-```
-package main
+### usage
 
-import (
-	"os"
-
-	_ "github.com/raboof/beats-output-http/http"
-
-	"github.com/elastic/beats/filebeat/cmd"
-)
-
-func main() {
-	if err := cmd.RootCmd.Execute(); err != nil {
-		os.Exit(1)
-	}
-}
-
+```go
+git clone https://github.com/cloud-org/beats-output-http.git && cd beats-output-http
+go build -o filebeat main.go
 ```
 
-Then configure the http output plugin in filebeat.yaml:
+### acknowledgements
 
-```
-output:
-  http:
-    hosts: ["some.example.com:80/foo"]
-```
+- https://github.com/raboof/beats-output-http/http
