@@ -14,8 +14,9 @@ filebeat v7.13.0 add http output
 
 ### usage
 
-```go
+```sh
 git clone https://github.com/cloud-org/beats-output-http.git && cd beats-output-http
+go mod tidy
 go build -o filebeat main.go
 ```
 
